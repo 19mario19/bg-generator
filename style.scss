@@ -1,0 +1,192 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+  
+  
+    /* TO DELETE */
+    scroll-behavior: smooth;
+  }
+  
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+  
+  /* width */
+  ::-webkit-scrollbar {
+    width: 0.1rem;
+    height: 0.5rem;
+ 
+    
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: hsla(132, 61%, 77%, 0);
+  
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--bg-body);
+    border-radius: 0.5rem;
+    opacity: 1;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsla(257, 11%, 88%, 0.8);
+    width: 3rem;
+    
+  }
+
+ 
+
+li, a, ul, img , button{
+    text-decoration: none;
+    list-style: none;
+    padding-inline-start: 0;
+    margin: 0;
+    padding: 0 ;
+    cursor: pointer;
+}
+
+//MIXINS (functions) for scss
+
+@mixin centerContainersGrid {
+  display: grid;
+  place-content: center;
+  
+}
+
+@mixin spaceBetweenFlexRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+@mixin spaceBetweenFlexCol {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: center;
+
+}
+
+@mixin flexCol {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+@mixin titleBar {
+  position: relative;
+  &::before {
+    position: absolute;
+    content: "";
+    background-color: hsla(0, 0%, 100%, 0.7);
+    width: clamp(5vw,10vw,15vw);
+    height: 1px;
+    top: -40px;
+  }
+}
+
+@mixin fullScreenCenter {
+  @include centerContainersGrid();
+  width: 100vw;
+  height: 100vh;
+}
+
+
+  
+  :root {
+    /* font-family: 'Cormorant Garamond', serif; */
+  
+    /* Colors */
+    
+    --bg-body: #C7CEDB;
+    --bg-container: #A0AAB2;
+
+    --bg-image-blue-dark: hsl(154, 7%, 19%);
+    --bg-image-blue-light: hsl(154, 7%, 69%);
+    --bg-image-pink-dark : hsl(282, 10%, 26%);
+    --bg-image-pink-light : hsl(354, 39%, 75%);
+
+  
+    /* Paragraph font size */
+  
+    font-size: 16px;
+  
+    /* Fonts */
+    // font-family: 'DM Serif Display', serif;
+    font-family: 'Karla', sans-serif; 
+  
+   
+    --ff-headings: 'DM Serif Display', serif;
+    --ff-body: 'Karla', sans-serif;
+
+    --weight-normal: 400;
+    --weight-bold: 700;
+
+    
+  
+    /* Borders used */
+  
+    --border-radius-main: 7px;
+  
+    --padding-desktop: 0 5rem;
+  
+  }
+
+  body {
+    background-color: var(--bg-body);
+    // transition: all 500ms ease;
+  }
+  
+
+  .container {
+    @include fullScreenCenter();
+    border: 20px solid gray;
+    
+    background-image: linear-gradient(to right, hsl(6,52%,91%), hsl(134,19%,9%));
+
+    transition: all 2000ms ease;
+
+  
+
+    
+  }
+
+  .card {
+
+    height: 400px;
+    width: 400px;
+    
+		&__tile {
+		}
+
+		&__input {
+      
+		}
+
+		&__subtitle {
+		}
+
+		&__style {
+      margin-top: 16rem;
+      
+		}
+
+}
+
+.toggle {
+  background-color: black;
+  color: white;
+}
+
+
+
+
